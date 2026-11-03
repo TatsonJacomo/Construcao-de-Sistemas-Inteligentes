@@ -28,7 +28,7 @@ tempo_grupo = float(input("Qual a quantidade de tempo estimado (em minutos)? "))
 print("\n--------- DADOS DO ANALISTA ---------")
 
 if quantidade_grupo <= 0 or tempo_grupo <= 0:
-    print("Dados Inválidos")
+    print("Dados inválidos")
 else:
     # CALCULO DO TEMPO TOTAL
     tempo_total = quantidade_grupo * tempo_grupo

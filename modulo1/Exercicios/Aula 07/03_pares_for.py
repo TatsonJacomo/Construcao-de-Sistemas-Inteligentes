@@ -7,12 +7,12 @@
 # Teste com 1, 2, 9 e 10.
 
 
-numero = int(input("Digite um número inteiro: "))
+limite = int(input("Digite um número inteiro: "))
 
-if numero > 0:
-    for numero in range(2, numero + 1, 2):
-        print(numero)
-elif numero == 1:
-    print("Não há pares no intervalo.")  
+if limite <= 0:
+    print("O limite é inválido!")
+elif limite == 1:
+    print("Não há pares no intervalo.")
 else:
-    print("O limite e inválido!")
+    for numero in range(2, limite + 1, 2):
+        print(numero)

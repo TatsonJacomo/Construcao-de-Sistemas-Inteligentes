@@ -7,3 +7,15 @@
 
 # Teste um acerto na primeira tentativa, um acerto na terceira e três erros.
 
+codigo_correto = "ROBO123"
+
+for tentativa in range(1, 4):
+    codigo = input(f"Tentativa {tentativa}: Digite o código: ")
+
+    if codigo == codigo_correto:
+        print("Código correto! Acesso liberado.")
+        break
+else:
+    print("Tentativas acabaram. Código incorreto.")
+
+

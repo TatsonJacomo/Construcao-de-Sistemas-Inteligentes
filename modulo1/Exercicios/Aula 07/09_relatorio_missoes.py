@@ -19,3 +19,32 @@
 
 # Desafio adicional: altere a energia inicial para 20. O programa deve encerrar sem realizar missões e sem tentar dividir por zero.
 
+energia = 100
+pontuacao_total = 0
+missoes_realizadas = 0
+
+for missao in range(1, 6):
+    if energia < 25:
+        print("Energia insuficiente")
+        break
+
+    pontuacao = -1
+    while pontuacao < 0 or pontuacao > 100:
+        try:
+            pontuacao = int(input(f"Digite a pontuação da missão {missao} (0 a 100): "))
+        except ValueError:
+            print("Pontuação inválida. Digite um número inteiro entre 0 e 100.")
+            pontuacao = -1
+
+    energia -= 25
+    pontuacao_total += pontuacao
+    missoes_realizadas += 1
+
+print(f"Missões realizadas: {missoes_realizadas}")
+print(f"Pontuação total: {pontuacao_total}")
+if missoes_realizadas > 0:
+    print(f"Média de pontos por missão: {pontuacao_total / missoes_realizadas:.1f}")
+else:
+    print("Média de pontos por missão: 0.0")
+print(f"Energia restante: {energia}")
+

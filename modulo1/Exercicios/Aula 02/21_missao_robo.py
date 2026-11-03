@@ -2,6 +2,7 @@
 
 # Crie o estado inicial do robô:
 
+
 #         Informação            	Valor inicial
 #          Nome                     	"Atlas"
 #          Energia	                       100
@@ -17,6 +18,8 @@
 # Percorre mais 80 metros e consome 25 pontos de energia.
 # Coleta mais 2 amostras e consome 10 pontos de energia.
 # Encerra a missão: atribua False à variável que indica se a missão está em andamento.
+
+
 # Atualize as variáveis correspondentes em cada etapa. Mostre uma mensagem após cada acontecimento e, no final, apresente uma ficha com todos os valores atualizados.
 
 # Parte extra: considerando que a missão durou 4 minutos, calcule a distância média percorrida por minuto e mostre o resultado com a unidade metros por minuto.

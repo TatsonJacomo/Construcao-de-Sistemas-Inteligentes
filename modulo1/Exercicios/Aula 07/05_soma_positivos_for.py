@@ -6,3 +6,15 @@
 
 # Teste com números positivos, negativos e zero na mesma execução.
 
+soma = 0
+positivos = 0
+
+for i in range(6):
+    numero = int(input(f"Digite o {i + 1}º número inteiro: "))
+    soma += numero
+    if numero > 0:
+        positivos += 1
+
+print(f"Soma dos números: {soma}")
+print(f"Quantidade de números positivos: {positivos}")
+

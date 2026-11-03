@@ -8,15 +8,16 @@
 # Calcule quanto cada amigo deverá pagar.
 # Mostre o total e o valor por pessoa com descrições.
 # Use type() para mostrar o tipo do valor por pessoa.
+
 # Para pensar: o resultado da divisão é um int ou um float, mesmo quando não há centavos?
 
 pizza = 48.00
 bebida = 12.00
 amigos = 4
 
-
 resultado = pizza + bebida
 total_pessoa = resultado / amigos
 
-print("O valor Total da compra e: R$" resultado) # valor total da conta
-print("Cada amigo vai pagar: R$" total_pessoa, type(total_pessoa)) # cada amiga vai pagar!
+print(f"O valor total da compra é: R$ {resultado:.2f}")
+print(f"Cada amigo vai pagar: R$ {total_pessoa:.2f}")
+print(f"O tipo do valor por pessoa é: {type(total_pessoa)}")
