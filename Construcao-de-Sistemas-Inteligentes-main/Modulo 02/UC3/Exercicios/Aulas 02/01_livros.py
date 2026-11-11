@@ -15,4 +15,15 @@ class Livro:
         self.paginas = paginas
 
 
-        
+livro1 = Livro("Crazy Frog", "Daniel De Almeida", 1390)
+livro2 = Livro("O Senhor Valdir", "Valdibras de hahaha", 1200)
+
+print(f"\nAntes da alteração: ")
+print(f"Livro 1: {livro1.titulo}, Autor: {livro1.autor}, Páginas: {livro1.paginas}")
+print(f"Livro 2: {livro2.titulo}, Autor: {livro2.autor}, Páginas: {livro2.paginas}")
+
+livro1.paginas = 350
+
+print(f"\nApós alteração:")
+print(f"Livro 1: {livro1.titulo}, Autor: {livro1.autor}, Páginas: {livro1.paginas}")
+print(f"Livro 2: {livro2.titulo}, Autor: {livro2.autor}, Páginas: {livro2.paginas}")

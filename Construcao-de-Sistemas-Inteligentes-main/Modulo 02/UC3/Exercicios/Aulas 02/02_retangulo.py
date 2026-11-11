@@ -5,3 +5,18 @@
 
 # Para explicar: qual é a diferença entre retornar a área e mostrá-la dentro do método?
 
+
+class Retangulo:
+    
+    def __init__(self, largura, altura):
+        self.largura = largura
+        self.altura = altura
+
+    def calcular_area(self):
+        return self.largura * self.altura
+
+retangulo1 = Retangulo(100,50)
+retangulo2 = Retangulo(300, 200)
+
+print(f"A área do Retangulo e, {retangulo1.calcular_area}")
+print(f"A área do Retangulo e, {retangulo2.calcular_area}")
