@@ -40,16 +40,16 @@ class Produto:
 produto = Produto("Produto", 5.0, 4)
 
 resultado = produto.vender(2)
-print(f"Venda de 2: retorno={resultado}, estoque={produto.estoque}")
+print(f"\nVenda de 2: retorno = {resultado}, estoque = {produto.estoque}")
 
 resultado = produto.vender(3)
-print(f"Tentativa de venda de 3: retorno={resultado}, estoque={produto.estoque}")
+print(f"Tentativa de venda de 3: retorno = {resultado}, estoque = {produto.estoque}")
 
 resultado = produto.repor(5)
-print(f"Reposição de 5: retorno={resultado}, estoque={produto.estoque}")
+print(f"Reposição de 5: retorno = {resultado}, estoque = {produto.estoque}")
 
 resultado = produto.repor(0)
-print(f"Tentativa de reposição de 0: retorno={resultado}, estoque={produto.estoque}")
+print(f"Tentativa de reposição de 0: retorno = {resultado}, estoque = {produto.estoque}")
 
-print(f"Valor em estoque: {produto.valor_em_estoque():.1f}")
+print(f"Valor em estoque: {produto.valor_em_estoque():.1f}\n")
 

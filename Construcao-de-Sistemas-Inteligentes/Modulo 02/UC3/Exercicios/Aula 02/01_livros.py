@@ -27,3 +27,4 @@ livro1.paginas = 350
 print(f"\nApós alteração:")
 print(f"Livro 1: {livro1.titulo}, Autor: {livro1.autor}, Páginas: {livro1.paginas}")
 print(f"Livro 2: {livro2.titulo}, Autor: {livro2.autor}, Páginas: {livro2.paginas}")
+print("\n")
