@@ -6,3 +6,4 @@
 # Teste duas tentativas de empréstimo seguidas de duas tentativas de devolução. Mostre os retornos e o estado após cada operação.
 
 # Conferência: os retornos são True, False, True, False.
+
