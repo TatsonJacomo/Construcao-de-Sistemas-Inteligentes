@@ -36,3 +36,65 @@
 # Em um teste separado, cancele duas vezes uma oficina com apenas uma inscrição e confira que a segunda tentativa preserva zero inscritos.
 
 
+class Oficina:
+    def __init__(self, nome, capacidade):
+        self.nome = nome
+        self.capacidade = capacidade
+        self.inscritos = 0
+
+    def inscrever(self):
+        if self.inscritos >= self.capacidade:
+            return False
+        self.inscritos += 1
+        return True
+
+    def cancelar(self):
+        if self.inscritos <= 0:
+            return False
+        self.inscritos -= 1
+        return True
+
+    def vagas_disponiveis(self):
+        return self.capacidade - self.inscritos
+
+
+def mostrar_relatorio(oficinas):
+    total_inscritos = 0
+    total_vagas = 0
+    oficinas_lotadas = 0
+
+    for oficina in oficinas:
+        print(oficina.nome, "- inscritos:", oficina.inscritos,
+              "- vagas disponíveis:", oficina.vagas_disponiveis())
+        total_inscritos += oficina.inscritos
+        total_vagas += oficina.vagas_disponiveis()
+        if oficina.vagas_disponiveis() == 0:
+            oficinas_lotadas += 1
+
+    print("Total de inscritos:", total_inscritos)
+    print("Total de vagas disponíveis:", total_vagas)
+    print("Oficinas lotadas:", oficinas_lotadas)
+
+
+robotica = Oficina("Robótica", 2)
+for _ in range(3):
+    robotica.inscrever()
+
+desenho = Oficina("Desenho", 3)
+desenho.inscrever()
+
+musica = Oficina("Música", 1)
+
+oficinas = [robotica, desenho, musica]
+mostrar_relatorio(oficinas)
+
+print("--- Lista vazia ---")
+mostrar_relatorio([])
+
+print("--- Cancelamento com uma inscrição ---")
+teste = Oficina("Teste", 2)
+print(teste.inscrever())
+print(teste.cancelar())
+print(teste.cancelar())
+print("Inscritos finais:", teste.inscritos)
+

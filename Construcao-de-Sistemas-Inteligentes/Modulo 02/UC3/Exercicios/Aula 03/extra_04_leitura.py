@@ -1,17 +1,43 @@
-# Crie a classe Leitura com titulo, total_paginas e paginas_lidas. 
-# Receba os dois primeiros na criação e inicie o terceiro com zero. 
+# Crie a classe Leitura com titulo, total_paginas e paginas_lidas.
+# Receba os dois primeiros na criação e inicie o terceiro com zero.
 # Considere total_paginas um inteiro positivo.
 
-# Implemente:
+class Leitura:
+    def __init__(self, titulo, total_paginas):
+        self.titulo = titulo
+        self.total_paginas = total_paginas
+        self.paginas_lidas = 0
 
-# avancar(quantidade): aceita um inteiro positivo, desde que o total lido não ultrapasse o tamanho do livro; retorna True ou False;
-# paginas_restantes(): retorna quantas páginas faltam;
-# concluida(): retorna True se todas as páginas foram lidas e False caso contrário.
+    def avancar(self, quantidade):
+        if quantidade <= 0:
+            return False
+        if quantidade + self.paginas_lidas > self.total_paginas:
+            return False
+        self.paginas_lidas += quantidade
+        return True
+
+    def paginas_restantes(self):
+        return self.total_paginas - self.paginas_lidas
+
+    def concluida(self):
+        return self.paginas_lidas == self.total_paginas
 
 
-# Crie duas leituras, uma de 120 páginas e outra de 80. Na primeira, tente avançar 30, depois 100 e depois 90 páginas.
+primeira = Leitura("Primeiro livro", 120)
+segunda = Leitura("Segundo livro", 80)
 
-# Conferência: os retornos são True, False e True. A primeira leitura termina com 120 páginas lidas, zero restantes e concluida() igual a True. A segunda continua com zero páginas lidas.
+print(primeira.avancar(30))
+print(primeira.avancar(100))
+print(primeira.avancar(90))
 
-# Para explicar: chamar concluida() duas vezes deve alterar o progresso? Justifique.
+print("Páginas lidas:", primeira.paginas_lidas)
+print("Páginas restantes:", primeira.paginas_restantes())
+print("Concluída:", primeira.concluida())
+print("Segunda leitura:", segunda.paginas_lidas)
+
+print("Chamada concluida() 1:", primeira.concluida())
+print("Chamada concluida() 2:", primeira.concluida())
+
+# concluida() apenas compara paginas_lidas com total_paginas.
+# Por isso chamá-la duas vezes não altera o progresso.
 

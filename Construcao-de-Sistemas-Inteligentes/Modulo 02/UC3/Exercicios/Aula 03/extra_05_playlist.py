@@ -1,22 +1,38 @@
 # Crie a classe Playlist, recebendo nome e criando uma lista própria musicas, inicialmente vazia.
 
-# Implemente:
+class Playlist:
+    def __init__(self, nome):
+        self.nome = nome
+        self.musicas = []
 
-# adicionar(titulo): recusa o texto vazio "" e títulos já presentes na lista; adiciona os demais. Retorna True ou False;
-# quantidade_musicas(): retorna o tamanho da lista.
+    def adicionar(self, titulo):
+        if titulo == "" or titulo in self.musicas:
+            return False
+        self.musicas.append(titulo)
+        return True
+
+    def quantidade_musicas(self):
+        return len(self.musicas)
 
 
-# Considere a comparação exata entre os textos: "Sol" e "sol" são títulos diferentes. Não é necessário remover espaços ou modificar letras.
+estudo = Playlist("Estudo")
+viagem = Playlist("Viagem")
 
-# 1. Crie as playlists Estudo e Viagem.
-# 2. Na primeira, adicione "Chuva", "Piano", novamente "Chuva" e, por último, "".
-# 3. Na segunda, adicione apenas "Estrada".
-# 4. Mostre o nome, as músicas e a quantidade de cada playlist.
-# 5. Percorra as músicas de Estudo com um for, mostrando um título por linha.
+print(estudo.adicionar("Chuva"))
+print(estudo.adicionar("Piano"))
+print(estudo.adicionar("Chuva"))
+print(estudo.adicionar(""))
 
+print(viagem.adicionar("Estrada"))
 
-# Conferência: as tentativas na primeira playlist retornam True, True, False e False. Ela contém ['Chuva', 'Piano']; a segunda contém ['Estrada'].
+print(estudo.nome, estudo.musicas, estudo.quantidade_musicas())
+print(viagem.nome, viagem.musicas, viagem.quantidade_musicas())
 
-# Para explicar: o que poderia acontecer se musicas = [] fosse declarada diretamente no corpo da classe?
+print("Músicas de Estudo:")
+for titulo in estudo.musicas:
+    print(titulo)
 
+# Se musicas = [] fosse declarada diretamente no corpo da classe, ela seria
+# uma lista compartilhada por todas as instâncias da classe, em vez de existir
+# separadamente em cada objeto. Adicionar música em uma playlist afetaria as outras.
 
