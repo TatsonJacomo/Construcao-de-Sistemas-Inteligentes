@@ -25,6 +25,7 @@ import tkinter as tk
 janela = tk.Tk()
 janela.title("Calculadora simples")
 janela.geometry("400x220")
+# Impede redimensionar largura e altura
 janela.resizable(False, False)
 
 resultado = tk.Label(janela, text="Resultado:")
